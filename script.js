@@ -1,4 +1,5 @@
 
+
 const weatherForm = document.querySelector(".weatherForm");
 const cityInput = document.querySelector(".cityInput");
 const card = document.querySelector(".card");
@@ -54,7 +55,9 @@ function displayWeatherInfo(data){
         const weatherEmoji=document.createElement("p");
     
         cityDisplay.textContent = city;
-        tempDisplay.textContent=`${((temp - 273.15) * (9/5) + 32).toFixed(1)}°C`;
+        //tempDisplay.textContent= `${((temp - 273.15) * (5/9) + 32).toFixed(1)}°C`;
+        const tempCelsius = (temp - 273.15).toFixed(1);
+        tempDisplay.textContent = `${tempCelsius}°C`;
         humidityDisplay.textContent=`Humidity: ${humidity}`;
         descDisplay.textContent=description;
         weatherEmoji.textContent = getWeatherEmoji(id);
